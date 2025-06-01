@@ -1,0 +1,281 @@
+:root {
+  --primary-color: #0077cc; /* Elite blue */
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background: #121212;
+  color: #f0f0f0;
+  scroll-behavior: smooth;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  z-index: 1000;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.small-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+/* Navigation */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header-right a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.header-right a:hover {
+  color: var(--primary-color);
+}
+
+/* Dark mode toggle */
+#darkModeToggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+#darkModeToggle:hover {
+  color: var(--primary-color);
+}
+
+/* Hamburger */
+#hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+#hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #ccc;
+  border-radius: 2px;
+}
+
+/* Home Section */
+#home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background: inherit;
+  padding: 120px 20px 40px;
+  text-align: center;
+}
+.center-profile {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* Main Sections */
+.section {
+  max-width: 900px;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+  text-align: left;
+  color: inherit;
+}
+.section h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: left;
+}
+.section p,
+.section ul.skills-list {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+}
+.skills-list li {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* Projects */
+.project {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.project h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.project a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.project a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1a1a1a;
+  color: #888;
+}
+
+/* Scroll Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  .header-right {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: #121212;
+    flex-direction: column;
+    width: 200px;
+    height: calc(100% - 60px);
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .header-right.open {
+    transform: translateX(0);
+  }
+  #hamburger {
+    display: flex;
+  }
+  .header-right a {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+}
+
+/* Light Mode */
+body.light-mode {
+  background: #f0f0f0;
+  color: #121212;
+}
+body.light-mode header {
+  background: #e0e0e0;
+}
+body.light-mode .header-right a {
+  color: #121212;
+}
+body.light-mode .header-right a:hover {
+  color: var(--primary-color);
+}
+body.light-mode .logo {
+  color: var(--primary-color);
+}
+body.light-mode footer {
+  background: #e0e0e0;
+  color: #555;
+}
+body.light-mode .skills-list li {
+  background: var(--primary-color);
+  color: #fff;
+}
+body.light-mode .project {
+  background: #dcdcdc;
+  color: #121212;
+}
+body.light-mode .project a {
+  color: var(--primary-color);
+}
+body.light-mode .center-profile {
+  box-shadow: 0 0 20px rgba(0, 119, 204, 0.5);
+}
+body.light-mode #home {
+  background: #f0f0f0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section:target::before {
+  content: "";
+  display: block;
+  height: 80px; /* Equal to or more than your header height */
+  margin-top: -80px;
+  visibility: hidden;
+}
+/* Default (Dark mode) */
+.section a {
+  color: #0077cc; /* Elite blue */
+  text-decoration: none;
+  font-weight: 600;
+}
+.section a:hover {
+  text-decoration: underline;
+}
+
+/* Light mode override */
+body.light-mode .section a {
+  color: #0077cc;
+}
+body.light-mode .section a:hover {
+  text-decoration: underline;
+}
