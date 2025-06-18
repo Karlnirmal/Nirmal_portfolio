@@ -1,8 +1,7 @@
 :root {
-  --primary-color: #0077cc; /* Elite blue */
+  --primary-color: #0077cc; 
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +15,6 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Header */
 header {
   position: fixed;
   top: 0;
@@ -46,7 +44,6 @@ header {
   color: var(--primary-color);
 }
 
-/* Navigation */
 .header-right {
   display: flex;
   align-items: center;
@@ -62,7 +59,6 @@ header {
   color: var(--primary-color);
 }
 
-/* Dark mode toggle */
 #darkModeToggle {
   background: transparent;
   border: none;
@@ -75,7 +71,6 @@ header {
   color: var(--primary-color);
 }
 
-/* Hamburger */
 #hamburger {
   display: none;
   flex-direction: column;
@@ -93,7 +88,6 @@ header {
   border-radius: 2px;
 }
 
-/* Home Section */
 #home {
   height: 100vh;
   display: flex;
@@ -113,7 +107,6 @@ header {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
-/* Main Sections */
 .section {
   max-width: 900px;
   margin: 60px auto 40px;
@@ -133,7 +126,6 @@ header {
   text-align: left;
 }
 
-/* Skills */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -148,7 +140,6 @@ header {
   font-weight: 600;
 }
 
-/* Projects */
 .project {
   background: #1f1f1f;
   padding: 20px;
@@ -168,7 +159,6 @@ header {
   text-decoration: underline;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -176,7 +166,6 @@ footer {
   color: #888;
 }
 
-/* Scroll Animation */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -187,7 +176,6 @@ footer {
   transform: translateY(0);
 }
 
-/* Responsive Menu */
 @media (max-width: 768px) {
   .header-right {
     position: fixed;
@@ -213,7 +201,6 @@ footer {
   }
 }
 
-/* Light Mode */
 body.light-mode {
   background: #f0f0f0;
   color: #121212;
@@ -258,13 +245,12 @@ html {
 section:target::before {
   content: "";
   display: block;
-  height: 80px; /* Equal to or more than your header height */
+  height: 80px; 
   margin-top: -80px;
   visibility: hidden;
 }
-/* Default (Dark mode) */
 .section a {
-  color: #0077cc; /* Elite blue */
+  color: #0077cc; 
   text-decoration: none;
   font-weight: 600;
 }
@@ -272,7 +258,6 @@ section:target::before {
   text-decoration: underline;
 }
 
-/* Light mode override */
 body.light-mode .section a {
   color: #0077cc;
 }
