@@ -1,4 +1,3 @@
-// Fade-in on scroll
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = {
   threshold: 0,
@@ -14,14 +13,12 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Dark mode toggle
 const toggleBtn = document.getElementById('darkModeToggle');
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
   toggleBtn.textContent = document.body.classList.contains('light-mode') ? '🌞' : '🌙';
 });
 
-// Hamburger menu toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 hamburger.addEventListener('click', () => {
